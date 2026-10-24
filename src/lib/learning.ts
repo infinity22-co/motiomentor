@@ -119,3 +119,15 @@ export const TOPICS = [
   "Distance–time & velocity–time graphs",
   "Uniform circular motion",
 ];
+
+/**
+ * True when the student asks for quick / revision notes. The app then shows the
+ * chapter learning-pack sheet as the answer image.
+ */
+export function wantsStudyPack(text: string) {
+  const t = text.toLowerCase();
+  const asksForNotes = /\b(notes?|revision|summary|recap|cheat sheets?)\b/.test(t);
+  const isRequest = /(give|prepare|make|write|create|show|share|send|need|want|please|can you|could you|help me|ready|quick|short)/.test(t);
+  return asksForNotes && isRequest;
+}
+
