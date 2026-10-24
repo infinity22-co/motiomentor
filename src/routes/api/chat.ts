@@ -90,7 +90,7 @@ export const Route = createFileRoute("/api/chat")({
         });
 
         const result = streamText({
-          model: provider.responses(MODEL),
+          model: provider.responses(MODEL) as unknown as Parameters<typeof streamText>[0]["model"],
           instructions: systemPrompt(method, profile?.display_name ?? ""),
           messages: await convertToModelMessages(messages.slice(-30)),
           abortSignal: request.signal,
