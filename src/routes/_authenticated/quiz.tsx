@@ -48,7 +48,9 @@ function Quiz() {
   }
 
   const inStyle = step < STYLE_QUESTIONS.length;
-  const q = inStyle ? STYLE_QUESTIONS[step] : CONCEPT_QUESTIONS[step - STYLE_QUESTIONS.length];
+  const styleQ = STYLE_QUESTIONS[step];
+  const conceptQ = CONCEPT_QUESTIONS[step - STYLE_QUESTIONS.length];
+  const q = (inStyle ? styleQ : conceptQ) ?? { q: "" };
 
   return (
     <div className="min-h-screen bg-hero px-4 py-10">
@@ -69,12 +71,12 @@ function Quiz() {
             <h2 className="mb-5 text-xl font-bold">{q.q}</h2>
             <div className="grid gap-3">
               {inStyle
-                ? STYLE_QUESTIONS[step].options.map((o) => (
+                ? (styleQ?.options ?? []).map((o) => (
                     <button key={o.text} onClick={() => answerStyle(o.method)} className="rounded-xl border p-4 text-left font-semibold transition hover:border-primary hover:bg-secondary">
                       {o.text}
                     </button>
                   ))
-                : CONCEPT_QUESTIONS[step - STYLE_QUESTIONS.length].options.map((o, i) => (
+                : (conceptQ?.options ?? []).map((o, i) => (
                     <button key={o} onClick={() => answerConcept(i)} className="rounded-xl border p-4 text-left font-semibold transition hover:border-primary hover:bg-secondary">
                       {o}
                     </button>

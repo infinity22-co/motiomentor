@@ -105,7 +105,7 @@ export function scoreQuiz(styleAnswers: LearningMethod[], conceptAnswers: number
   const conceptScore = conceptAnswers.filter((a, i) => CONCEPT_QUESTIONS[i]?.answer === a).length;
   const max = Math.max(...ORDER.map((m) => styleScores[m]));
   const tied = ORDER.filter((m) => styleScores[m] === max);
-  let recommended = tied[0];
+  let recommended: LearningMethod = tied[0] ?? "reading";
   if (tied.length > 1 && conceptScore < CONCEPT_QUESTIONS.length / 2 && tied.includes("picture")) recommended = "picture";
   return { styleScores, conceptScore, conceptTotal: CONCEPT_QUESTIONS.length, recommended };
 }
