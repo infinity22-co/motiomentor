@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Motiomentor
+
+An ai face teaching chapter motion of class 9 . Ai face clears doubts, do everything for them teaches, prepare diagrams etc using chatgpt API. It prepare notes and explain the concepts were doubts are tgere. Attatch this image for students who choose picture based learning. Students can chose between what learning methods. Basic login and basic intellectual exam for identifying that which methods suits him or her
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://motiomentor.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/797dbcef-031e-4ccf-8cff-0e5ba769c701).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
